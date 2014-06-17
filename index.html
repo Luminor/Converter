@@ -15,7 +15,7 @@ $("#currency").val('');
 $(document).ready(function () {
     $.ajax({
         type: "GET",
-        url: "http://pcvector.net/rss.xml",
+        url: "http://bank-ua.com/export/currrate.xml",
         dataType: "xml",
         success: xmlParser
     });
