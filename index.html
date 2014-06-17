@@ -8,7 +8,6 @@
 //http://bank-ua.com/export/currrate.xml
 function loadXMLDoc(url)
 {
-	alert(url);
 var xmlhttp;
 var txt,x,xx,i;
 if (window.XMLHttpRequest)
@@ -21,8 +20,10 @@ else
   }
 xmlhttp.onreadystatechange=function()
   {
+	alert(url);
   if (xmlhttp.readyState==4 && xmlhttp.status==200)
     {
+	alert(url+url);
     txt="<table border='1'><tr><th>Title</th><th>Artist</th></tr>";
     x=xmlhttp.responseXML.documentElement.getElementsByTagName("item");
     for (i=0;i<x.length;i++)
