@@ -13,11 +13,12 @@ $("#currency").val('');
 
 }
 
-$("#lcOper").click(function() {
-	alert($('input[name="lcOper"]:checked').val());
-
-
-});
+function ChangeRatio()
+{
+	if($('input[name="lcOper"]:checked').val()=='sell')
+		alert("sell");
+		else alert("buy");
+}
 
 </script>
 </head>
@@ -61,9 +62,8 @@ $("#lcOper").click(function() {
                             <td> </td>
                             <td> </td>
                             <td>
-                                    <div class="radio"> <label><input type="radio" id="lcOper" name="lcOper" value="nbu" onClick="ChangeRatio('nbu');" checked="true"/> НБУ</label> </div>
-                                    <div class="radio"> <label><input type="radio" id="lcOper" name="lcOper" value="buy" onClick="ChangeRatio('buy');"/> Покупка</label> </div>
-                                    <div class="radio"> <label><input type="radio" id="lcOper" name="lcOper" value="sell" onClick="ChangeRatio('sell');"/> Продажа</label> </div>
+                                    <div class="radio"> <label><input type="radio" id="lcOper" name="lcOper" value="buy" onClick="ChangeRatio();"/> Покупка</label> </div>
+                                    <div class="radio"> <label><input type="radio" id="lcOper" name="lcOper" value="sell" onClick="ChangeRatio();"/> Продажа</label> </div>
                             </td>
                     </tr>
                     <tr>
