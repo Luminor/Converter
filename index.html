@@ -9,7 +9,6 @@
 function loadXMLDoc(url)
 {
 
-    	alert('ff');
 var xmlhttp;
 var txt,x,xx,i;
 if (window.XMLHttpRequest)
@@ -22,9 +21,10 @@ else
   }
 xmlhttp.onreadystatechange=function()
   {
+  	
+    	alert("xmlhttp.readyState: "+xmlhttp.readyState+"xmlhttp.status: "+xmlhttp.status);
   if (xmlhttp.readyState==4 && xmlhttp.status==200)
     {
-    	alert('ff');
     txt="<table border='1'><tr><th>name</th><th>code</th></tr>";
     x=xmlhttp.responseXML.documentElement.getElementsByTagName("item");
     for (i=0;i<x.length;i++)
@@ -136,8 +136,7 @@ $("#currency").val($('input[name="lcOper"]:checked').val());
 
 		<button class="btn"  onclick="loadXMLDoc('http://luminor.github.io/Converter/currate.xml')" >Рассчитать</button>
             <input class="btn" type="button" onclick="ClearAll();" value="Очистить"/> 
-            <div id="txtCDInfo">
-		</div>
+            <div id="txtCDInfo"></div>
 		</form>
         
     </div>
