@@ -11,10 +11,11 @@ $("#selectSum").val('');
 $("#result").val('');
 $("#currency").val('');
 
-}
-$( "#subm" ).click(function() {
   $( "#subm" ).hide();
-});
+  $( this ).hide( 2000, function() {
+    $( this ).remove();
+  });
+}
 </script>
 </head>
 <body>
