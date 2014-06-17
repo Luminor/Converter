@@ -1,12 +1,17 @@
-
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml">
-   <head>
-         <meta http-equiv="Content-Type" content="text/html; charset=windows-1251" />
-         <title>Парсер XML файлов на jQuery | pcvector.net </title>
-		 <link rel="shortcut icon" href="/favicon.ico" />
-		 <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
+<html>
+<head>
+<title>Конвертер валют</title>
+<link rel="stylesheet" type="text/css" href="style.css">
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
 <script>
+function ClearAll(){
+alert('Все поля очищены!')
+
+$("#selectSum").val('');
+$("#result").val('');
+$("#currency").val('');
+
+}
 $(document).ready(function () {
     $.ajax({
         type: "GET",
@@ -15,67 +20,77 @@ $(document).ready(function () {
         success: xmlParser
     });
 });
-
+function ChangeRatio()
+{
+	if($('input[name="lcOper"]:checked').val()=='sell')
+		alert("sell");
+	else alert("buy");
+$("#currency").val($('input[name="lcOper"]:checked').val());
+}
 function xmlParser(xml) {
-
-    $('#load').fadeOut();
-
-    $(xml).find("item").each(function () {
-
-        $(".main").append('<div class="book"><div class="title">' + $(this).find("title").text() + '</div><div class="description">' + $(this).find("description").text() + '</div><div class="date">Опубликовано ' + $(this).find("pubDate").text() + '</div></div>');
-        $(".book").fadeIn(1000);
-
-    });
-	
-	$('img').attr({ width: 200 });
-
+$("#currency").val('ввввв');
 }
 </script>
-
-<style> 
-.main{
-margin:0 auto;
-}
- 
-.book{
-width:220px;
-height:300px;
-float:left;
-margin:10px;
-border:1px #dedede solid;
-padding:5px;
-display:none;
-}
-
-.title{
-margin-bottom:6px;}
- 
-.description{font-size:11px; font-family:Geneva, Arial, Helvetica, sans-serif;}
-
-.date{font-size:10px; color:#999; margin-top:4px;}
-
-.loader{
-height:11px;
-}
-
-</style> 
 </head>
-
 <body>
+<div class="converterWrap">
+    <div class="calculator">
 
-<div class="topHeader">
-	<a class="backArticle" href="http://pcvector.net/scripts/layout_and_interface/296-parser-xml-faylov-na-jquery.html">Назад к статье &gt;&gt;&gt;</a>
+        <h3>Конвертер валют</h3>
+
+
+            <form id="calc_form" method="get" onSubmit="">
+                <table width="100%">
+                    <tr>
+                            <td>
+                                <label>Введите сумму</label><br/><input id="selectSum" name="selectSum" class="inputText" type="text" value="100" onKeyPress="return numbersonly(this, event)"/>
+                            </td>
+                            <td align="center" style="vertical-align: bottom;"> </td>
+                            <td style="vertical-align: top;"><label>Результат</label><br/><input id="result" class="inputText" type="text" value=""/></td>
+                    </tr>
+                    <tr>
+                            <td><label>Выберите валюту</label><br/>
+                                <select id="selectVal" onChange="ChangeCurrency();" name="selectVal">
+                                      <option value="UAH" style=" margin-left:5px; padding-left:20px;" selected="selected">UAH - гривна</option>
+                                      <option value='USD' style=' margin-left:5px; padding-left:20px;'>USD - доллар США</option>
+                                      <option value='EUR' style=' margin-left:5px; padding-left:20px;'>EUR - Евро</option>
+					<option value='RUB' style=' margin-left:5px; padding-left:20px;'>RUB - российский рубль</option>
+                                </select>
+                            </td>
+                            <td> </td>
+                            <td><label>Конвертировать в</label><br/>
+                                <select id="selectValTo" onChange="ChangeCurrency();" name="selectValTo">
+                                      <option value="UAH" style=" margin-left:5px;  padding-left:20px;">UAH - гривна</option>
+                                      <option value='USD' style=' margin-left:5px; padding-left:20px;' selected="selected">USD - доллар США</option>
+                                      <option value='EUR' style=' margin-left:5px;  padding-left:20px;'>EUR - Евро</option>
+                                      <option value='RUB' style=' margin-left:5px; padding-left:20px;'>RUB - российский рубль</option>
+                                    
+                                </select>
+                            </td>
+                    </tr>
+                    <tr>
+                            <td> </td>
+                            <td> </td>
+                            <td>
+                                    <div class="radio"> <label><input type="radio" id="lcOper" name="lcOper" value="buy" onClick="ChangeRatio();"/> Покупка</label> </div>
+                                    <div class="radio"> <label><input type="radio" id="lcOper" name="lcOper" value="sell" onClick="ChangeRatio();"/> Продажа</label> </div>
+                            </td>
+                    </tr>
+                    <tr>
+                            <td> </td>
+                            <td> </td>
+                            <td>
+                                    <input id="currency" name="currency" style="width: 99%;" type="text" readonly="readonly"/>
+
+                            </td>
+                    </tr>
+            </table>
+
+            <input class="btn" id="subm" type="submit" value="Рассчитать" OnClick=""/> 
+            <input class="btn" type="button" onclick="ClearAll();" value="Очистить"/> 
+        </form>
+        
+    </div>
 </div>
-
-
-<div class="main">
-<div align="center" class="loader"><img src="loader.gif" id="load" width="16" height="11" align="absmiddle"/></div>
-</div>
-<div class="clear"></div>
-
-
-<!-- pcvector.net -->
-<script type="text/javascript" src="http://pcvector.net/templates/pcv/js/pcvector.js"></script>
-<!-- /pcvector.net -->	
 </body>
 </html>
