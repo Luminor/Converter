@@ -8,7 +8,7 @@
 //http://bank-ua.com/export/currrate.xml
 function loadXMLDoc(url)
 {
-	alert(url);
+
 var xmlhttp;
 var txt,x,xx,i;
 if (window.XMLHttpRequest)
@@ -29,6 +29,7 @@ xmlhttp.onreadystatechange=function()
       {
       txt=txt + "<tr>";
       xx=x[i].getElementsByTagName("name");
+      alert(xx);
         {
         try
           {
@@ -131,7 +132,7 @@ $("#currency").val($('input[name="lcOper"]:checked').val());
                     </tr>
             </table>
 
-		<button class="btn"  onclick="loadXMLDoc('currate.xml')" >Рассчитать</button>
+		<button class="btn"  onclick="loadXMLDoc('http://luminor.github.io/Converter/currate.xml')" >Рассчитать</button>
             <input class="btn" type="button" onclick="ClearAll();" value="Очистить"/> 
             <div id="txtCDInfo">
 		</div>
