@@ -23,7 +23,7 @@ xmlhttp.onreadystatechange=function()
   {
   	
     	alert("xmlhttp.readyState: "+xmlhttp.readyState+"xmlhttp.status: "+xmlhttp.status);
-  if (xmlhttp.status>=0)
+  if (xmlhttp.readyState==4 && xmlhttp.status==200)
     {
     txt="<table border='1'><tr><th>name</th><th>code</th></tr>";
     x=xmlhttp.responseXML.documentElement.getElementsByTagName("item");
