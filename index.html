@@ -1,0 +1,112 @@
+<html>
+<head>
+<title>Конвертер валют</title>
+<link rel="stylesheet" type="text/css" href="style.css">
+<script src="http://code.jquery.com/jquery-latest.js"></script>
+<script>
+function ClearAll(){
+alert('Все поля очищены!')
+
+$("#selectSum").val('');
+$("#result").val('');
+$("#currency").val('');
+
+}
+function ChangeRatio(name)
+{
+//alert(name);
+if(name=='nbu')
+{
+alert('nbu');
+var x=loadXMLDoc("http://bank-ua.com/export/currrate.xml");
+var xml=x.responseXML;
+path="/chapter/item[char3='USD']/rate";
+
+if (document.implementation && document.implementation.createDocument)
+{
+var nodes=xml.evaluate(path, xml, null, XPathResult.ANY_TYPE, null);
+var result=nodes.iterateNext();
+
+  $("#currency").val('sdds');
+}
+else if (name=='sell')
+{
+alert('sell');
+}
+else if (name=='buy')
+alert('buy');
+}
+
+function loadXMLDoc(dname)
+{
+  xhttp=new XMLHttpRequest();
+  xhttp.open("GET",dname,false);
+  try {xhttp.responseType="msxml-document"} catch(err) {} // Helping IE
+  xhttp.send("");
+  return xhttp;
+}
+</script>
+</head>
+<body>
+<div class="converterWrap">
+    <div class="calculator">
+
+        <h3>Конвертер валют</h3>
+
+
+            <form id="calc_form" method="get" onSubmit="">
+                <table width="100%">
+                    <tr>
+                            <td>
+                                <label>Введите сумму</label><br/><input id="selectSum" name="selectSum" class="inputText" type="text" value="100" onKeyPress="return numbersonly(this, event)"/>
+                            </td>
+                            <td align="center" style="vertical-align: bottom;"> </td>
+                            <td style="vertical-align: top;"><label>Результат</label><br/><input id="result" class="inputText" type="text" value=""/></td>
+                    </tr>
+                    <tr>
+                            <td><label>Выберите валюту</label><br/>
+                                <select id="selectVal" onChange="ChangeCurrency();" name="selectVal">
+                                      <option value="UAH" style=" margin-left:5px; padding-left:20px;" selected="selected">UAH - гривна</option>
+                                      <option value='USD' style=' margin-left:5px; padding-left:20px;'>USD - доллар США</option>
+                                      <option value='EUR' style=' margin-left:5px; padding-left:20px;'>EUR - Евро</option>
+									  <option value='RUB' style=' margin-left:5px; padding-left:20px;'>RUB - российский рубль</option>
+                                </select>
+                            </td>
+                            <td> </td>
+                            <td><label>Конвертировать в</label><br/>
+                                <select id="selectValTo" onChange="ChangeCurrency();" name="selectValTo">
+                                      <option value="UAH" style=" margin-left:5px;  padding-left:20px;">UAH - гривна</option>
+                                      <option value='USD' style=' margin-left:5px; padding-left:20px;' selected="selected">USD - доллар США</option>
+                                      <option value='EUR' style=' margin-left:5px;  padding-left:20px;'>EUR - Евро</option>
+                                      <option value='RUB' style=' margin-left:5px; padding-left:20px;'>RUB - российский рубль</option>
+                                    
+                                </select>
+                            </td>
+                    </tr>
+                    <tr>
+                            <td> </td>
+                            <td> </td>
+                            <td>
+                                    <div class="radio"> <label><input type="radio" id="lcOper" name="lcOper" value="nbu" onClick="ChangeRatio('nbu');" checked="true"/> НБУ</label> </div>
+                                    <div class="radio"> <label><input type="radio" id="lcOper" name="lcOper" value="buy" onClick="ChangeRatio('buy');"/> Покупка</label> </div>
+                                    <div class="radio"> <label><input type="radio" id="lcOper" name="lcOper" value="sell" onClick="ChangeRatio('sell');"/> Продажа</label> </div>
+                            </td>
+                    </tr>
+                    <tr>
+                            <td> </td>
+                            <td> </td>
+                            <td>
+                                    <input id="currency" name="currency" style="width: 99%;" type="text" readonly="readonly"/>
+
+                            </td>
+                    </tr>
+            </table>
+
+            <input class="btn" type="submit" value="Рассчитать" OnClick=""/> 
+            <input class="btn" type="button" onclick="ClearAll();" value="Очистить"/> 
+        </form>
+        
+    </div>
+</div>
+</body>
+</html>
