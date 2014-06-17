@@ -23,6 +23,7 @@ xmlhttp.onreadystatechange=function()
   {
   if (xmlhttp.readyState==4 && xmlhttp.status==200)
     {
+    	alert('ff');
     txt="<table border='1'><tr><th>name</th><th>code</th></tr>";
     x=xmlhttp.responseXML.documentElement.getElementsByTagName("item");
     for (i=0;i<x.length;i++)
@@ -55,7 +56,6 @@ xmlhttp.onreadystatechange=function()
       }
     txt=txt + "</table>";
     document.getElementById('txtCDInfo').innerHTML=txt;
-    	alert('ff');
     }
   }
 xmlhttp.open("GET",url,true);
