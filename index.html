@@ -8,6 +8,7 @@
 //http://bank-ua.com/export/currrate.xml
 function loadXMLDoc(url)
 {
+	alert(url);
 var xmlhttp;
 var txt,x,xx,i;
 if (window.XMLHttpRequest)
@@ -20,9 +21,9 @@ else
   }
 xmlhttp.onreadystatechange=function()
   {
-  if (true)
+  if (xmlhttp.readyState==4 && xmlhttp.status==200)
     {
-    txt="<table border='1'><tr><th>Title</th><th>Artist</th></tr>";
+    txt="<table border='1'><tr><th>name</th><th>code</th></tr>";
     x=xmlhttp.responseXML.documentElement.getElementsByTagName("item");
     for (i=0;i<x.length;i++)
       {
@@ -130,10 +131,9 @@ $("#currency").val($('input[name="lcOper"]:checked').val());
                     </tr>
             </table>
 
-            <input class="btn" id="subm" type="submit" value="Рассчитать" OnClick="loadXMLDoc('currrate.xml')"/> 
+		<button class="btn"  onclick="loadXMLDoc('currrate.xml')" >Рассчитать</button>
             <input class="btn" type="button" onclick="ClearAll();" value="Очистить"/> 
             <div id="txtCDInfo">
-		<button onclick="loadXMLDoc('currrate.xml')">Get CD info</button>
 		</div>
 		</form>
         
