@@ -4,20 +4,61 @@
 <link rel="stylesheet" type="text/css" href="style.css">
 <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
 <script>
-$(document).ready(function () {
-	
-    $.ajax({
-        type: "GET",
-        url: "currrate.xml",
-        dataType: "xml",
-        success: xmlParser
-    });
-});
-
-function xmlParser(xml) {
-
-$("#currency").val('ввdfdfввв');
+//http://www.w3schools.com/ajax/ajax_xmlfile.asp
+//http://bank-ua.com/export/currrate.xml
+function loadXMLDoc(url)
+{
+var xmlhttp;
+var txt,x,xx,i;
+if (window.XMLHttpRequest)
+  {// code for IE7+, Firefox, Chrome, Opera, Safari
+  xmlhttp=new XMLHttpRequest();
+  }
+else
+  {// code for IE6, IE5
+  xmlhttp=new ActiveXObject("Microsoft.XMLHTTP");
+  }
+xmlhttp.onreadystatechange=function()
+  {
+  if (xmlhttp.readyState==4 && xmlhttp.status==200)
+    {
+    txt="<table border='1'><tr><th>Title</th><th>Artist</th></tr>";
+    x=xmlhttp.responseXML.documentElement.getElementsByTagName("item");
+    for (i=0;i<x.length;i++)
+      {
+      txt=txt + "<tr>";
+      xx=x[i].getElementsByTagName("name");
+        {
+        try
+          {
+          txt=txt + "<td>" + xx[0].firstChild.nodeValue + "</td>";
+          }
+        catch (er)
+          {
+          txt=txt + "<td> </td>";
+          }
+        }
+      xx=x[i].getElementsByTagName("char3");
+        {
+        try
+          {
+          txt=txt + "<td>" + xx[0].firstChild.nodeValue + "</td>";
+          }
+        catch (er)
+          {
+          txt=txt + "<td> </td>";
+          }
+        }
+      txt=txt + "</tr>";
+      }
+    txt=txt + "</table>";
+    document.getElementById('txtCDInfo').innerHTML=txt;
+    }
+  }
+xmlhttp.open("GET",url,true);
+xmlhttp.send();
 }
+
 function ClearAll(){
 alert('Все поля очищены!')
 
@@ -89,9 +130,12 @@ $("#currency").val($('input[name="lcOper"]:checked').val());
                     </tr>
             </table>
 
-            <input class="btn" id="subm" type="submit" value="Рассчитать" OnClick=""/> 
+            <input class="btn" id="subm" type="submit" value="Рассчитать" OnClick="loadXMLDoc('currrate.xml')"/> 
             <input class="btn" type="button" onclick="ClearAll();" value="Очистить"/> 
-        </form>
+            <div id="txtCDInfo">
+		<button onclick="loadXMLDoc('currrate.xml')">Get CD info</button>
+		</div>
+		</form>
         
     </div>
 </div>
