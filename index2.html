@@ -2,7 +2,6 @@
 <head>
 <title>Конвертер валют</title>
 <link rel="stylesheet" type="text/css" href="style.css">
-
 <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
 <script type="text/javascript">
 function ClearAll(){
@@ -26,7 +25,7 @@ $("#result").val('');
 		c[4] = 3.05; n[4] = "PLN";
 		c[5] = 0.99; n[5] = "CAD";
 		c[6] = 0.62; n[6] = "GBP";
- 
+		
 		function Conv()
 		{
 			var res, vfrom, vto, vcash;
@@ -52,64 +51,38 @@ $("#result").val('');
 		document.getElementById("result").innerHTML = res;
 		}
 </script>
-<div class="converterWrap">
-
-        <h3>Конвертер валют</h3>
-
-
-            <form id="calc_form" method="get" onSubmit="">
-                <table width="100%">
-                    <tr>
-                            <td>
-                                <label>Введите сумму</label><br/><input name="cash" id="cash" class="is" type="text" onkeyup='Conv();' />
-                            </td>
-                            <td align="center" style="vertical-align: bottom;"> </td>
-                            <td style="vertical-align: top;"><label>Результат</label><br/><input id="result" class="inputText" type="text" value=""/></td>
-                    </tr>
-                    <tr>
-                            <td><label>Выберите валюту</label><br/>
-                                <select name="from" id="from" onchange='Conv();'>
-					<option value="0" selected="selected">Доллар США</option>
-					<option value="1">Евро</option>
-					<option value="2">Рубль</option>
-					<option value="3">Гривна</option>
-					<option value="4">Польский злотый</option>
-					<option value="5">Канадский доллар</option>
-					<option value="6">Фунт стерлингов</option>
-					</select>
-                            </td>
-                            <td> </td>
-                            <td><label>Конвертировать в</label><br/>
-                                <select name="to" id="to" onchange='Conv();'>
-					<option value="0">Доллар США</option>
-					<option value="1">Евро</option>
-					<option value="2">Рубль</option>
-					<option value="3" selected="selected">Гривна</option>
-					<option value="4">Польский злотый</option>
-					<option value="5">Канадский доллар</option>
-					<option value="6">Фунт стерлингов</option>
-				</select>
-                            </td>
-                    </tr>
-                    <tr>
-                            <td> </td>
-                            <td> </td>
-                            
-                    </tr>
-                    <tr>
-                            <td> </td>
-                            <td> </td>
-                            <td>
-                                    <span id="result"><span class="result">0,00</span></span>
-                            </td>
-                    </tr>
-            </table>
-
-	<input class="btn" type="button" onclick="ClearAll();" value="Очистить"/> 
-		</form>
-        
-    </div>
-    
-    
+    <table border="0">
+	<tr>
+	<td>Исходная валюта</td>
+	<td>
+		<select name="from" id="from" onchange='Conv();'>
+			<option value="0" selected="selected">Доллар США</option>
+			<option value="1">Евро</option>
+			<option value="2">Рубль</option>
+			<option value="3">Гривна</option>
+			<option value="4">Польский злотый</option>
+			<option value="5">Канадский доллар</option>
+			<option value="6">Фунт стерлингов</option>
+		</select>
+	</td>
+	</tr>
+	<td>Сумма</td>
+	<td><input name="cash" id="cash" class="is" type="text" onkeyup='Conv();' /></td>
+	</tr>
+	<tr>
+	<td>Расчетная валюта</td>
+	<td>
+		<select name="to" id="to" onchange='Conv();'>
+			<option value="0">Доллар США</option>
+			<option value="1">Евро</option>
+			<option value="2">Рубль</option>
+			<option value="3" selected="selected">Гривна</option>
+			<option value="4">Польский злотый</option>
+			<option value="5">Канадский доллар</option>
+			<option value="6">Фунт стерлингов</option>
+		</select>
+	</td>
+	</tr></table>
+	<p>Результат <span id="result"><span class="result">0,00</span></span></p>
 </body>
 </html>
