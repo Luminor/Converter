@@ -12,39 +12,6 @@ $("#result").val('');
 $("#currency").val('');
 
 }
-function ChangeRatio(name)
-{
-//alert(name);
-if(name=='nbu')
-{
-alert('nbu');
-var x=loadXMLDoc("http://bank-ua.com/export/currrate.xml");
-var xml=x.responseXML;
-path="/chapter/item[char3='USD']/rate";
-
-if (document.implementation && document.implementation.createDocument)
-{
-var nodes=xml.evaluate(path, xml, null, XPathResult.ANY_TYPE, null);
-var result=nodes.iterateNext();
-
-  $("#currency").val('sdds');
-}
-else if (name=='sell')
-{
-alert('sell');
-}
-else if (name=='buy')
-alert('buy');
-}
-
-function loadXMLDoc(dname)
-{
-  xhttp=new XMLHttpRequest();
-  xhttp.open("GET",dname,false);
-  try {xhttp.responseType="msxml-document"} catch(err) {} // Helping IE
-  xhttp.send("");
-  return xhttp;
-}
 </script>
 </head>
 <body>
