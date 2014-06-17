@@ -25,7 +25,7 @@ function ChangeRatio()
 	if($('input[name="lcOper"]:checked').val()=='sell')
 		alert("sell");
 	else alert("buy");
-
+$("#currency").val($('input[name="lcOper"]:checked').val());
 }
 function xmlParser(xml) {
 $("#currency").val('ввввв');
