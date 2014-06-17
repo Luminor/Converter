@@ -12,21 +12,23 @@ $("#result").val('');
 $("#currency").val('');
 
 }
-
-function ChangeRatio()
-{
-	$.ajax({
+$(document).ready(function () {
+    $.ajax({
         type: "GET",
         url: "http://pcvector.net/rss.xml",
         dataType: "xml",
         success: xmlParser
-    	});
-}
-function xmlParser(xml) {
-
+    });
+});
+function ChangeRatio()
+{
 	if($('input[name="lcOper"]:checked').val()=='sell')
 		alert("sell");
 	else alert("buy");
+}
+function xmlParser(xml) {
+
+	
 	alert("buhgy");
 
 }
