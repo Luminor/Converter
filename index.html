@@ -12,6 +12,31 @@ $("#result").val('');
 $("#currency").val('');
 
 }
+
+
+function ChangeRatio(name)
+{
+//alert(name);
+if(name=='nbu')
+{
+alert('nbu');
+}
+else if (name=='sell')
+{
+alert('sell');
+}
+else if (name=='buy')
+alert('buy');
+}
+
+function loadXMLDoc(dname)
+{
+  xhttp=new XMLHttpRequest();
+  xhttp.open("GET",dname,false);
+  try {xhttp.responseType="msxml-document"} catch(err) {} // Helping IE
+  xhttp.send("");
+  return xhttp;
+}
 </script>
 </head>
 <body>
