@@ -12,31 +12,9 @@ $("#result").val('');
 $("#currency").val('');
 
 }
-
-
-function ChangeRatio(name)
-{
-//alert(name);
-if(name=='nbu')
-{
-alert('nbu');
-}
-else if (name=='sell')
-{
-alert('sell');
-}
-else if (name=='buy')
-alert('buy');
-}
-
-function loadXMLDoc(dname)
-{
-  xhttp=new XMLHttpRequest();
-  xhttp.open("GET",dname,false);
-  try {xhttp.responseType="msxml-document"} catch(err) {} // Helping IE
-  xhttp.send("");
-  return xhttp;
-}
+$( ".submit" ).click(function() {
+  $( ".submit" ).hide( 2000 );
+});
 </script>
 </head>
 <body>
@@ -61,7 +39,7 @@ function loadXMLDoc(dname)
                                       <option value="UAH" style=" margin-left:5px; padding-left:20px;" selected="selected">UAH - гривна</option>
                                       <option value='USD' style=' margin-left:5px; padding-left:20px;'>USD - доллар США</option>
                                       <option value='EUR' style=' margin-left:5px; padding-left:20px;'>EUR - Евро</option>
-									  <option value='RUB' style=' margin-left:5px; padding-left:20px;'>RUB - российский рубль</option>
+					<option value='RUB' style=' margin-left:5px; padding-left:20px;'>RUB - российский рубль</option>
                                 </select>
                             </td>
                             <td> </td>
