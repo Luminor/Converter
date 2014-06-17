@@ -15,11 +15,21 @@ $("#currency").val('');
 
 function ChangeRatio()
 {
+	$.ajax({
+        type: "GET",
+        url: "http://pcvector.net/rss.xml",
+        dataType: "xml",
+        success: xmlParser
+    	});
+}
+function xmlParser(xml) {
+
 	if($('input[name="lcOper"]:checked').val()=='sell')
 		alert("sell");
-		else alert("buy");
-}
+	else alert("buy");
+	
 
+}
 </script>
 </head>
 <body>
