@@ -8,21 +8,30 @@ $(document).ready(function () {
 	
     $.ajax({
         type: "GET",
-        url: "http://bank-ua.com/export/currrate.xml",
+        url: "currrate.xml",
         dataType: "xml",
         success: xmlParser
     });
 });
+
+function xmlParser(xml) {
+
+$("#currency").val('ввdfdfввв');
+}
+function ClearAll(){
+alert('Все поля очищены!')
+
+$("#selectSum").val('');
+$("#result").val('');
+$("#currency").val('');
+
+}
 function ChangeRatio()
 {
 	if($('input[name="lcOper"]:checked').val()=='sell')
 		alert("sell");
 	else alert("buy");
 $("#currency").val($('input[name="lcOper"]:checked').val());
-}
-function xmlParser(xml) {
-
-$("#currency").val('ввdfdfввв');
 }
 </script>
 </head>
