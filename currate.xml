@@ -1,0 +1,237 @@
+<?xml version="1.0" encoding="windows-1251"?>
+<chapter>
+<item>
+<date>2014-06-17</date>
+<code>203</code>
+<char3>CZK</char3>
+<size>100</size>
+<name>чеських крон</name>
+<rate>58.0007</rate>
+<change>0.0566</change>
+</item>
+<item>
+<date>2014-06-17</date>
+<code>860</code>
+<char3>UZS</char3>
+<size>100</size>
+<name>узбецьких сумів</name>
+<rate>0.5095</rate>
+<change>-0.0003</change>
+</item>
+<item>
+<date>2014-06-17</date>
+<code>348</code>
+<char3>HUF</char3>
+<size>1000</size>
+<name>угорських форинтів</name>
+<rate>51.7519</rate>
+<change>-0.1068</change>
+</item>
+<item>
+<date>2014-06-17</date>
+<code>934</code>
+<char3>TMT</char3>
+<size>100</size>
+<name></name>
+<rate>412.6472</rate>
+<change>0.4334</change>
+</item>
+<item>
+<date>2014-06-17</date>
+<code>949</code>
+<char3>TRY</char3>
+<size>100</size>
+<name></name>
+<rate>549.1643</rate>
+<change>-3.8362</change>
+</item>
+<item>
+<date>2014-06-17</date>
+<code>960</code>
+<char3>XDR</char3>
+<size>100</size>
+<name>СПЗ</name>
+<rate>1811.0907</rate>
+<change>2.445</change>
+</item>
+<item>
+<date>2014-06-17</date>
+<code>702</code>
+<char3>SGD</char3>
+<size>100</size>
+<name>сінгапурських доларів</name>
+<rate>940.1685</rate>
+<change>0.5709</change>
+</item>
+<item>
+<date>2014-06-17</date>
+<code>643</code>
+<char3>RUB</char3>
+<size>10</size>
+<name>російських рублів</name>
+<rate>3.4024</rate>
+<change>-0.0204</change>
+</item>
+<item>
+<date>2014-06-17</date>
+<code>985</code>
+<char3>PLN</char3>
+<size>100</size>
+<name>польських злотих</name>
+<rate>384.1698</rate>
+<change>-1.1415</change>
+</item>
+<item>
+<date>2014-06-17</date>
+<code>578</code>
+<char3>NOK</char3>
+<size>100</size>
+<name>норвезьких крон</name>
+<rate>196.0122</rate>
+<change>0.3335</change>
+</item>
+<item>
+<date>2014-06-17</date>
+<code>498</code>
+<char3>MDL</char3>
+<size>100</size>
+<name>молдовських леїв</name>
+<rate>84.3157</rate>
+<change>-0.0294</change>
+</item>
+<item>
+<date>2014-06-17</date>
+<code>440</code>
+<char3>LTL</char3>
+<size>100</size>
+<name>литовських літів</name>
+<rate>460.9080</rate>
+<change>0.4159</change>
+</item>
+<item>
+<date>2014-06-17</date>
+<code>124</code>
+<char3>CAD</char3>
+<size>100</size>
+<name>канадських доларів</name>
+<rate>1080.8362</rate>
+<change>-2.0399</change>
+</item>
+<item>
+<date>2014-06-17</date>
+<code>398</code>
+<char3>KZT</char3>
+<size>100</size>
+<name>казахстанських тенге</name>
+<rate>6.4086</rate>
+<change>0.0067</change>
+</item>
+<item>
+<date>2014-06-17</date>
+<code>352</code>
+<char3>ISK</char3>
+<size>100</size>
+<name>ісландських крон</name>
+<rate>10.3017</rate>
+<change>0.0072</change>
+</item>
+<item>
+<date>2014-06-17</date>
+<code>978</code>
+<char3>EUR</char3>
+<size>100</size>
+<name>ЄВРО</name>
+<rate>1591.4233</rate>
+<change>1.4363</change>
+</item>
+<item>
+<date>2014-06-17</date>
+<code>840</code>
+<char3>USD</char3>
+<size>100</size>
+<name>доларів США</name>
+<rate>1176.0444</rate>
+<change>1.235</change>
+</item>
+<item>
+<date>2014-06-17</date>
+<code>208</code>
+<char3>DKK</char3>
+<size>100</size>
+<name>датських крон</name>
+<rate>213.4105</rate>
+<change>0.2412</change>
+</item>
+<item>
+<date>2014-06-17</date>
+<code>974</code>
+<char3>BYR</char3>
+<size>10</size>
+<name>білоруських рублів</name>
+<rate>0.0116</rate>
+<change>0</change>
+</item>
+<item>
+<date>2014-06-17</date>
+<code>826</code>
+<char3>GBP</char3>
+<size>100</size>
+<name>англійських фунтів стерлінгів</name>
+<rate>1995.7653</rate>
+<change>3.0506</change>
+</item>
+<item>
+<date>2014-06-17</date>
+<code>944</code>
+<char3>AZN</char3>
+<size>100</size>
+<name></name>
+<rate>1499.4829</rate>
+<change>1.5747</change>
+</item>
+<item>
+<date>2014-06-17</date>
+<code>036</code>
+<char3>AUD</char3>
+<size>100</size>
+<name>австралійських доларів</name>
+<rate>1103.1632</rate>
+<change>0.078</change>
+</item>
+<item>
+<date>2014-06-17</date>
+<code>752</code>
+<char3>SEK</char3>
+<size>100</size>
+<name>шведських крон</name>
+<rate>176.8150</rate>
+<change>0.604</change>
+</item>
+<item>
+<date>2014-06-17</date>
+<code>756</code>
+<char3>CHF</char3>
+<size>100</size>
+<name>швейцарських франків</name>
+<rate>1307.0165</rate>
+<change>1.394</change>
+</item>
+<item>
+<date>2014-06-17</date>
+<code>156</code>
+<char3>CNY</char3>
+<size>100</size>
+<name>юанів женьміньбі (Китай)</name>
+<rate>188.8975</rate>
+<change>-0.3461</change>
+</item>
+<item>
+<date>2014-06-17</date>
+<code>392</code>
+<char3>JPY</char3>
+<size>1000</size>
+<name>японських єн</name>
+<rate>115.4795</rate>
+<change>0.3298</change>
+</item>
+</chapter>
