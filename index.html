@@ -25,6 +25,7 @@ xmlhttp.onreadystatechange=function()
     {
     txt="<table border='1'><tr><th>name</th><th>code</th></tr>";
     x=xmlhttp.responseXML.documentElement.getElementsByTagName("item");
+    alert(x);
     for (i=0;i<x.length;i++)
       {
       txt=txt + "<tr>";
