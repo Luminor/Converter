@@ -14,7 +14,6 @@ $("#currency").val('');
 }
 $(document).ready(function () {
 	
-$("#currency").val('ввdfdfввв');
     $.ajax({
         type: "GET",
         url: "http://bank-ua.com/export/currrate.xml",
@@ -30,7 +29,8 @@ function ChangeRatio()
 $("#currency").val($('input[name="lcOper"]:checked').val());
 }
 function xmlParser(xml) {
-$("#currency").val('ввввв');
+
+$("#currency").val('ввdfdfввв');
 }
 </script>
 </head>
