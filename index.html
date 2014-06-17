@@ -9,7 +9,7 @@
 function loadXMLDoc(url)
 {
 var xmlhttp = getXmlHttp()
-xmlhttp.open('GET', url, false);
+xmlhttp.open('GET', 'index.html', false);
 xmlhttp.send(null);
 if(xmlhttp.status == 200) {
   alert(xmlhttp.responseText);
