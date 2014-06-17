@@ -1,0 +1,76 @@
+<html>
+<head>
+	<title>Конвертер валют</title>
+</head>
+<body>
+	<script type="text/javascript">
+		c = new Array();
+		n = new Array();
+		c[0] = 1; n[0] = "USD";
+		c[1] = 15.914233; n[1] = "EUR";
+		c[2] = 29.89; n[2] = "RUB";
+		c[3] = 11.760444; n[3] = "UAH";
+		c[4] = 3.05; n[4] = "PLN";
+		c[5] = 0.99; n[5] = "CAD";
+		c[6] = 0.62; n[6] = "GBP";
+ 
+		function Conv()
+		{
+			var res, vfrom, vto, vcash;
+			vcash = document.getElementById("cash").value;
+			if(isNaN())
+			vfrom = document.getElementById("from").value;
+			vcash = vcash.replace(',', '\.');
+			vcash = vcash.replace(' ', '');
+			vcash = vcash.replace(' ', '');
+			vto = document.getElementById("to").value;
+			res = c[vto] * vcash / c[vfrom], 2;
+		if(isNaN(res))
+		{
+			res = "<span class='result'>0,00</span>";
+		}
+		else
+		{
+			res = res.toFixed(2);
+			res = res.toString();
+			res = res.replace('\.', ',');
+			res = "<span class='result'>" + res + "</span>&nbsp;" + n[vto];
+		}
+		document.getElementById("result").innerHTML = res;
+		}
+</script>
+    <table border="0">
+	<tr>
+	<td>Исходная валюта</td>
+	<td>
+		<select name="from" id="from" onchange='Conv();'>
+			<option value="0" selected="selected">Доллар США</option>
+			<option value="1">Евро</option>
+			<option value="2">Рубль</option>
+			<option value="3">Гривна</option>
+			<option value="4">Польский злотый</option>
+			<option value="5">Канадский доллар</option>
+			<option value="6">Фунт стерлингов</option>
+		</select>
+	</td>
+	</tr>
+	<td>Сумма</td>
+	<td><input name="cash" id="cash" class="is" type="text" onkeyup='Conv();' /></td>
+	</tr>
+	<tr>
+	<td>Расчетная валюта</td>
+	<td>
+		<select name="to" id="to" onchange='Conv();'>
+			<option value="0">Доллар США</option>
+			<option value="1">Евро</option>
+			<option value="2">Рубль</option>
+			<option value="3" selected="selected">Гривна</option>
+			<option value="4">Польский злотый</option>
+			<option value="5">Канадский доллар</option>
+			<option value="6">Фунт стерлингов</option>
+		</select>
+	</td>
+	</tr></table>
+	<p>Результат <span id="result"><span class="result">0,00</span></span></p>
+</body>
+</html>
