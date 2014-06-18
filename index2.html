@@ -7,8 +7,13 @@
 
 <script type="text/javascript">
 jQuery(document).ready(function(){
+	
+$.date = function(){
+    return new Date().toLocaleString();
+};
 
-alert(time());
+alert($.date());
+
 });
 
 function ClearAll(){
