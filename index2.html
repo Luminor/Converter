@@ -7,8 +7,12 @@
 
 <script type="text/javascript">
 $(document).ready(function () {
-    $("p").text("The DOM is now loaded and can be manipulated.");
-});
+    $.date = function(){
+    return new Date().toLocaleString();
+};
+
+alert($.date());
+
 function ClearAll(){
 alert('Все поля очищены!');
 document.getElementById("result").innerHTML = "<span class='result'>0,00</span>";
