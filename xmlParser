@@ -13,7 +13,7 @@ jQuery(document).ready(function(){
 				function()
 				{
 						
-					var char3 = jQuery(this).attr('char3'),
+					var char3 = jQuery(this).find('char3').text(),
 						name = jQuery(this).find('name').text(),
 						rate = jQuery(this).find('rate').text(),
 					jQuery('<div class="items"></div>').html('<h2>'+name+'</h2><p>'+char3+'</p>').appendTo('#xml-data');
