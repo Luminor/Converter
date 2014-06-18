@@ -46,6 +46,7 @@ $("#cash").val('0');
 			res = res.toString();
 			res = res.replace('\.', ',');
 			res = "<span class='result'>" + res + "</span>&nbsp;" + n[vto];
+			$("#currency").val(n[vto]);
 		}
 		document.getElementById("result").innerHTML = res;
 		}
@@ -63,7 +64,7 @@ $("#cash").val('0');
                                 <label>Введите сумму</label><br/><input name="cash" id="cash" class="is" type="text" onkeyup='Conv();' />
                             </td>
                             <td align="center" style="vertical-align: bottom;"> </td>
-                            <td style="vertical-align: top;"><label>Результат</label><br/></td>
+                            <td style="vertical-align: top;"><label>Результат</label><br/><span id="result"><span class="result">0,00</span></span></td>
                             </tr>
                     <tr>
                             <td><label>Выберите валюту</label><br/>
@@ -99,8 +100,8 @@ $("#cash").val('0');
                             <td> </td>
                             <td> </td>
                             <td>
-                                    <p>Результат <span id="result"><span class="result">0,00</span></span></p>
-
+                                    
+				<input id="currency" name="currency" style="width: 99%;" type="text" readonly="readonly"/>
                             </td>
                     </tr>
             </table>
