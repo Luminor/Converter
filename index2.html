@@ -53,7 +53,7 @@ $("#cash").val('0');
 			res = res.toString();
 			res = res.replace('\.', ',');
 			res = "<span class='result'>" + res + "</span>&nbsp;" + n[vto];
-			$("#currency").val(c[vto] / c[vfrom]);
+			$("#currency").val((c[vto] / c[vfrom]).toFixed(2));
 		}
 		document.getElementById("result").innerHTML = res;
 		}
