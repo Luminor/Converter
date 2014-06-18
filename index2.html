@@ -6,6 +6,9 @@
 <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
 
 <script type="text/javascript">
+$(document).ready(function () {
+    $("p").text("The DOM is now loaded and can be manipulated.");
+});
 function ClearAll(){
 alert('Все поля очищены!');
 document.getElementById("result").innerHTML = "<span class='result'>0,00</span>";
@@ -27,7 +30,6 @@ $("#cash").val('0');
 		{
 		var res, vfrom, vto, vcash;
 		vcash = document.getElementById("cash").value;
-		if(isNaN())
 		vfrom = document.getElementById("from").value;
 		vcash = vcash.replace(',', '\.');
 		vcash = vcash.replace(' ', '');
