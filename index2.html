@@ -18,7 +18,7 @@ $("#TimeAndDate").html($.date());
 
 function ClearAll(){
 alert('Все поля очищены!');
-$("#result").html("<span class='result'>0,00</span>");
+$("#result").html("0,00");
 $("#cash").val('0');
 }
 </script>
@@ -49,14 +49,14 @@ $("#cash").val('0');
 		res = c[vto] * vcash / c[vfrom], 2;
 		if(isNaN(res))
 		{
-			res = "<span class='result'>0,00</span>";
+			res = "0,00";
 		}
 		else
 		{
 			res = res.toFixed(2);
 			res = res.toString();
 			res = res.replace('\.', ',');
-			res = "<span class='result'>" + res + "</span>&nbsp;" + n[vto];
+			res =  res + "&nbsp;" + n[vto];
 			$("#currency").val((c[vto] / c[vfrom]).toFixed(2));
 		}
 		$("#result").html(res);
@@ -76,7 +76,7 @@ $("#cash").val('0');
                                 <label>Введите сумму</label><br/><input name="cash" id="cash" class="is" type="text" onkeyup='Conv();' />
                             </td>
                             <td align="center" style="vertical-align: bottom;"> </td>
-                            <td style="vertical-align: top;"><label>Результат</label><br/><span id="result"><span class="result">0,00</span></span></td>
+                            <td style="vertical-align: top;"><label>Результат</label><br/><span id="result">0,00</span></td>
                             </tr>
                     <tr>
                             <td><label>Выберите валюту</label><br/>
