@@ -12,7 +12,7 @@ $.date = function(){
     return new Date().toLocaleString();
 };
 
-$("#dateAndTime").val($.date());
+document.getElementById("TimeAndDate").innerHTML = $.date();
 
 });
 
@@ -62,7 +62,7 @@ $("#cash").val('0');
     <div class="calculator">
 
         <h3>Конвертер валют</h3>
-        <label id="dateAndTime"></label>
+         <span class="TimeAndDate"></span>
 
 
             <form id="calc_form" method="get" onSubmit="">
