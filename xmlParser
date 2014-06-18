@@ -1,5 +1,6 @@
 <html>
 <head>
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
 <script>
 jQuery(document).ready(function(){
 		jQuery.ajax({
@@ -7,11 +8,7 @@ jQuery(document).ready(function(){
 			url: "data.xml", // путь к файлу, который будем читать
 			dataType: "xml", // тип данных, с которыми работаем
 			success: function(xml) { // переменная названа xml. ее можно назвать как либо по другому
-			/*
-				в ответе приходит объект XML.
-				чтобы добраться до необходимого узла, используем jQuery-поиск по DOM узлам
-				например, var idItem = jQuery(xml).find("#item1").eq(1).attr("id");
-			*/
+			
 			jQuery(xml).find('item').each(
 				function()
 				{
