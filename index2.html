@@ -45,7 +45,7 @@ $("#cash").val('0');
 		vcash = vcash.replace(',', '\.');
 		vcash = vcash.replace(' ', '');
 		vcash = vcash.replace(' ', '');
-		vto = document.getElementById("to").value;
+		vto=$("#to").val();
 		res = c[vto] * vcash / c[vfrom], 2;
 		if(isNaN(res))
 		{
