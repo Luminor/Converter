@@ -22,17 +22,18 @@ $("#cash").val('0');
 		c[2] = 33; n[2] = "RUB";
 		c[3] = 11.56; n[3] = "UAH";
 		
+		
 		function Conv()
 		{
-			var res, vfrom, vto, vcash;
-			vcash = document.getElementById("cash").value;
-			if(isNaN())
-			vfrom = document.getElementById("from").value;).value;
-			vcash = vcash.replace(',', '\.');
-			vcash = vcash.replace(' ', '');
-			vcash = vcash.replace(' ', '');
-			vto = document.getElementById("to"
-			res = c[vto] * vcash / c[vfrom], 2;
+		var res, vfrom, vto, vcash;
+		vcash = document.getElementById("cash").value;
+		if(isNaN())
+		vfrom = document.getElementById("from").value;
+		vcash = vcash.replace(',', '\.');
+		vcash = vcash.replace(' ', '');
+		vcash = vcash.replace(' ', '');
+		vto = document.getElementById("to").value;
+		res = c[vto] * vcash / c[vfrom], 2;
 		if(isNaN(res))
 		{
 			res = "<span class='result'>0,00</span>";
