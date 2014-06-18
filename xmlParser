@@ -1,0 +1,34 @@
+<html>
+<head>
+<script>
+jQuery(document).ready(function(){
+		jQuery.ajax({
+			type: "GET", // метод передачи данных, можно пропустить - по умолчанию и так get
+			url: "data.xml", // путь к файлу, который будем читать
+			dataType: "xml", // тип данных, с которыми работаем
+			success: function(xml) { // переменная названа xml. ее можно назвать как либо по другому
+			/*
+				в ответе приходит объект XML.
+				чтобы добраться до необходимого узла, используем jQuery-поиск по DOM узлам
+				например, var idItem = jQuery(xml).find("#item1").eq(1).attr("id");
+			*/
+			jQuery(xml).find('item').each(
+				function()
+				{
+						
+					var char3 = jQuery(this).attr('char3'),
+						name = jQuery(this).find('name').text(),
+						rate = jQuery(this).find('rate').text(),
+					jQuery('<div class="items"></div>').html('<h2>'+name+'</h2><p>'+char3+'</p>').appendTo('#xml-data');
+				
+				});			
+				
+			}
+			
+		});
+</script>
+</head>
+<body>
+
+</body>
+</html>
