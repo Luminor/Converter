@@ -28,6 +28,10 @@ $("#cash").val('0');
 			vcash = document.getElementById("cash").value;
 			if(isNaN())
 			vfrom = document.getElementById("from").value;).value;
+			vcash = vcash.replace(',', '\.');
+			vcash = vcash.replace(' ', '');
+			vcash = vcash.replace(' ', '');
+			vto = document.getElementById("to"
 			res = c[vto] * vcash / c[vfrom], 2;
 		if(isNaN(res))
 		{
