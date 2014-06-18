@@ -36,8 +36,12 @@ $("#cash").val('0');
 		function Conv()
 		{
 		var res, vfrom, vto, vcash;
+		/*
 		vcash = document.getElementById("cash").value;
 		vfrom = document.getElementById("from").value;
+		*/
+		vcash=$("#cash").val();
+		vfrom=$("#from").val();
 		vcash = vcash.replace(',', '\.');
 		vcash = vcash.replace(' ', '');
 		vcash = vcash.replace(' ', '');
